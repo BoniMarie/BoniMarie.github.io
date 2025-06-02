@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriAssist | Smart Farming</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .bg-primary {
+            background-color: #2E7D32;
+        }
+        
+        .bg-secondary {
+            background-color: #81C784;
+        }
+        
+        .text-primary {
+            color: #2E7D32;
+        }
+        
+        .text-secondary {
+            color: #81C784;
+        }
+        
+        .border-primary {
+            border-color: #2E7D32;
+        }
+        
+        .btn-primary {
+            background-color: #2E7D32;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background-color: #1B5E20;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: #81C784;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #66BB6A;
+            transform: translateY(-2px);
+        }
+        
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #2E7D32;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+            transition: all 0.3s;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .faq-question {
+            cursor: pointer;
+            padding: 1rem 0;
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .faq-answer.active {
+            max-height: 300px;
+            padding-bottom: 1rem;
+        }
+        
+        .testimonial-card {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <img src="https://i.postimg.cc/tgCnSjbq/tekTT-removebg-preview.png" alt="Logo" class="h-12">
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-800 hover:text-primary">Accueil</a>
+                    <a href="#about" class="text-gray-800 hover:text-primary">À propos</a>
+                    <a href="#solution" class="text-gray-800 hover:text-primary">Notre Solution</a>
+                    <a href="#team" class="text-gray-800 hover:text-primary">Notre Équipe</a>
+                    <a href="#faq" class="text-gray-800 hover:text-primary">FAQ</a>
+                    <a href="#contact" class="text-gray-800 hover:text-primary">Contact</a>
+                </div>
+                <button class="md:hidden focus:outline-none">
+                    <i class="fas fa-bars text-2xl text-gray-800"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg text-white py-20 md:py-32">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">L'Agriculture Intelligente par la Technologie</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Dibango, notre application AgriAssist, révolutionne l'agriculture en permettant le diagnostic des maladies des plantes par photo et en fournissant des recommandations personnalisées.</p>
+            <button class="btn-primary px-8 py-3 rounded-full text-lg font-semibold">Découvrir Dibango</button>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary">À Propos</h2>
+            </div>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80" alt="Agriculture technologique" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-semibold text-primary mb-4">Notre Mission</h3>
+                    <p class="text-gray-700 mb-4">Nous sommes une startup innovante qui vise à transformer le secteur agricole en Afrique grâce à des solutions technologiques accessibles et efficaces.</p>
+                    <p class="text-gray-700 mb-6">Nous croyons que la technologie peut aider les agriculteurs à améliorer leurs rendements, réduire les pertes et adopter des pratiques plus durables.</p>
+                    
+                    <h3 class="text-2xl font-semibold text-primary mb-4">Nos Valeurs</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <i class="fas fa-lightbulb text-secondary text-xl mb-2"></i>
+                            <h4 class="font-semibold">Innovation</h4>
+                            <p class="text-sm text-gray-600">Nous développons des solutions créatives pour répondre aux défis agricoles.</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <i class="fas fa-hands-helping text-secondary text-xl mb-2"></i>
+                            <h4 class="font-semibold">Collaboration</h4>
+                            <p class="text-sm text-gray-600">Nous travaillons avec les agriculteurs pour comprendre leurs besoins.</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <i class="fas fa-leaf text-secondary text-xl mb-2"></i>
+                            <h4 class="font-semibold">Durabilité</h4>
+                            <p class="text-sm text-gray-600">Nous promouvons des pratiques agricoles respectueuses de l'environnement.</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <i class="fas fa-chart-line text-secondary text-xl mb-2"></i>
+                            <h4 class="font-semibold">Impact</h4>
+                            <p class="text-sm text-gray-600">Nous mesurons notre succès par l'amélioration des conditions de vie des agriculteurs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Solution - AgriAssist Section -->
+    <section id="solution" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary">Notre Solution: AgriAssist</h2>
+                <p class="text-center text-gray-600 max-w-3xl mx-auto mt-2">Dibango, notre application mobile phare, utilise l'intelligence artificielle pour aider les agriculteurs à identifier les maladies des plantes et obtenir des recommandations de traitement.</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center mb-12">
+                <div class="md:w-1/2 mb-8 md:mb-0 flex justify-center">
+                    <img src="https://i.postimg.cc/wTR3pJps/dibango-Img.png" alt="Application mobile Dibango" class="rounded-lg shadow-lg w-64 h-auto">
+                </div>
+                <div class="md:w-1/2 md:pl-8">
+                    <h3 class="text-2xl font-semibold text-primary mb-4">Fonctionnalités Principales</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-camera feature-icon mr-4"></i>
+                            <div>
+                                <h4 class="font-semibold">Diagnostic par Photo</h4>
+                                <p class="text-gray-600">Prenez simplement une photo de votre plante malade et notre IA identifiera la maladie avec précision.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-clipboard-list feature-icon mr-4"></i>
+                            <div>
+                                <h4 class="font-semibold">Recommandations Personnalisées</h4>
+                                <p class="text-gray-600">Recevez des conseils de traitement adaptés à votre situation et à votre environnement.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-calendar-alt feature-icon mr-4"></i>
+                            <div>
+                                <h4 class="font-semibold">Suivi des Cultures</h4>
+                                <p class="text-gray-600">Enregistrez l'évolution de vos plantes et recevez des alertes pour les soins préventivs.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-users feature-icon mr-4"></i>
+                            <div>
+                                <h4 class="font-semibold">Communauté d'Agriculteurs</h4>
+                                <p class="text-gray-600">Échangez avec d'autres agriculteurs et experts pour partager des conseils et des expériences.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <button class="btn-primary px-8 py-3 rounded-full text-lg font-semibold">Télécharger l'Application</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet the Team Section -->
+    <section id="team" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary">Rencontrez Notre Équipe</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Team Member 1 -->
+                <div class="team-member bg-gray-50 rounded-lg overflow-hidden shadow-md text-center p-6">
+                    <img src="https://i.postimg.cc/W3n9jvzY/Aboya-Franck-removebg-preview.png" alt="Aboya Messou Franck" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-primary">
+                    <h3 class="text-xl font-semibold text-primary">Aboya Messou Franck</h3>
+                    <p class="text-secondary font-medium mb-2">CEO - Team Leader</p>
+                    <p class="text-gray-600">Ingénieur en informatique avec 10 ans d'expérience dans le développement d'applications mobiles et passionné par l'agriculture durable.</p>
+                    <div class="flex justify-center mt-4 space-x-4">
+                        <a href="https://www.linkedin.com/in/mesabo/" class="text-gray-600 hover:text-primary"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="team-member bg-gray-50 rounded-lg overflow-hidden shadow-md text-center p-6">
+                    <img src="https://i.postimg.cc/h4QkTJJK/boni-Marie-removebg-preview.png" alt="N'Cho Boni Marie Dominique" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-primary">
+                    <h3 class="text-xl font-semibold text-primary">N'Cho Boni Marie Dominique</h3>
+                    <p class="text-secondary font-medium mb-2">Shareholder</p>
+                    <p class="text-gray-600">Experte en agronomie avec une spécialisation en phytopathologie, elle apporte son expertise technique sur les maladies des plantes.</p>
+                    <div class="flex justify-center mt-4 space-x-4">
+                        <a href="https://www.linkedin.com/in/boni-marie-dominique-ncho/" class="text-gray-600 hover:text-primary"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="team-member bg-gray-50 rounded-lg overflow-hidden shadow-md text-center p-6">
+                    <img src="https://i.postimg.cc/BQVPyVST/Bamba-Sigui-removebg-preview.png" alt="Bamba Sigui" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-primary">
+                    <h3 class="text-xl font-semibold text-primary">Bamba Sigui</h3>
+                    <p class="text-secondary font-medium mb-2">Shareholder</p>
+                    <p class="text-gray-600">Entrepreneur expérimenté dans le secteur agricole, il assure le lien entre la technologie et les besoins réels des agriculteurs.</p>
+                    <div class="flex justify-center mt-4 space-x-4">
+                        <a href="https://www.linkedin.com/in/sigui-bamba/" class="text-gray-600 hover:text-primary"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary">Questions Fréquentes</h2>
+            </div>
+            
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item bg-white p-4 rounded-lg shadow">
+                    <div class="faq-question flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-gray-800">Comment fonctionne le diagnostic des maladies par photo ?</h3>
+                        <i class="fas fa-chevron-down text-primary"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-gray-600 mt-2">Notre application utilise une intelligence artificielle entraînée sur des milliers d'images de plantes saines et malades. Il vous suffit de prendre une photo claire de la partie affectée de votre plante, et notre système analysera l'image pour identifier la maladie avec une précision de plus de 90%.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="faq-item bg-white p-4 rounded-lg shadow">
+                    <div class="faq-question flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-gray-800">L'application fonctionne-t-elle hors ligne ?</h3>
+                        <i class="fas fa-chevron-down text-primary"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-gray-600 mt-2">Certaines fonctionnalités de base sont disponibles hors ligne, mais pour le diagnostic complet et les recommandations, une connexion internet est nécessaire. Nous travaillons à rendre plus de fonctionnalités accessibles sans connexion dans les prochaines versions.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="faq-item bg-white p-4 rounded-lg shadow">
+                    <div class="faq-question flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-gray-800">Quelles plantes sont actuellement prises en charge ?</h3>
+                        <i class="fas fa-chevron-down text-primary"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-gray-600 mt-2">Actuellement, nous couvrons les principales cultures vivrières d'Afrique de l'Ouest : maïs, manioc, igname, riz, tomate, aubergine, poivron et plusieurs autres. Nous ajoutons continuellement de nouvelles plantes à notre base de données.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="faq-item bg-white p-4 rounded-lg shadow">
+                    <div class="faq-question flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-gray-800">L'application est-elle gratuite ?</h3>
+                        <i class="fas fa-chevron-down text-primary"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-gray-600 mt-2">Oui, la version de base de Dibango est entièrement gratuite avec toutes les fonctionnalités essentielles. Nous proposons également une version premium avec des fonctionnalités avancées pour les professionnels, comme des analyses de sol et des prévisions météo détaillées.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="faq-item bg-white p-4 rounded-lg shadow">
+                    <div class="faq-question flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-gray-800">Comment puis-je contribuer à améliorer l'application ?</h3>
+                        <i class="fas fa-chevron-down text-primary"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-gray-600 mt-2">Nous apprécions toute contribution ! Vous pouvez nous envoyer des photos de plantes avec des descriptions précises via l'application, participer à nos enquêtes, ou simplement partager vos retours d'expérience. Ces contributions nous aident à améliorer continuellement notre système.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold">Témoignages</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white text-gray-800 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Jean Koffi" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">Jean Koffi</h4>
+                            <p class="text-sm text-gray-600">Agriculteur, Adzopé</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"Grâce à Dibango, j'ai pu sauver ma plantation de manioc qui était attaquée par une maladie. Les recommandations étaient claires et faciles à appliquer. Maintenant, tous les agriculteurs de mon village utilisent l'application !"</p>
+                    <div class="mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </div>
+    </div>
+    
+    <!-- Testimonial 2 -->
+    <div class="testimonial-card bg-white text-gray-800 p-6 rounded-lg">
+      <div class="flex items-center mb-4">
+        <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Aminata Diarra" class="w-12 h-12 rounded-full mr-4">
+        <div>
+          <h4 class="font-semibold">Aminata Diarra</h4>
+          <p class="text-sm text-gray-600">Maraîchère, Bamako</p>
+        </div>
+      </div>
+      <p class="text-gray-700">"Avant, je perdais jusqu'à 30% de ma production à cause des maladies. Maintenant, avec Dibango, je peux détecter les problèmes très tôt et agir rapidement. Ma production a augmenté et mes légumes sont plus beaux que jamais."</p>
+      <div class="mt-4 text-yellow-400">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+      </div>
+    </div>
+    
+    <!-- Testimonial 3 -->
+    <div class="testimonial-card bg-white text-gray-800 p-6 rounded-lg">
+      <div class="flex items-center mb-4">
+        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Samuel Gbédjé" class="w-12 h-12 rounded-full mr-4">
+        <div>
+          <h4 class="font-semibold">Samuel Gbédjé</h4>
+          <p class="text-sm text-gray-600">Agronome, Lomé</p>
+        </div>
+      </div>
+      <p class="text-gray-700">"En tant qu'agronome, je recommande Dibango à tous les agriculteurs que j'accompagne. L'application est très précise et les recommandations sont adaptées à notre contexte local. C'est un outil formidable pour vulgariser les bonnes pratiques agricoles."</p>
+      <div class="mt-4 text-yellow-400">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-16 bg-secondary text-white">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-6">Prêt à révolutionner votre agriculture ?</h2>
+    <p class="text-xl mb-8 max-w-3xl mx-auto">Téléchargez Dibango dès maintenant et bénéficiez d'un diagnostic précis des maladies de vos plantes directement depuis votre smartphone.</p>
+    <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+      <button class="btn-primary px-8 py-3 rounded-full text-lg font-semibold">
+        <i class="fab fa-google-play mr-2"></i> Google Play
+      </button>
+      <button class="bg-black px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-800 transition">
+        <i class="fab fa-apple mr-2"></i> App Store
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer id="contact" class="bg-gray-900 text-white py-12">
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <img src="https://i.postimg.cc/tgCnSjbq/tekTT-removebg-preview.png" alt="Logo" class="h-12 mb-4">
+        <p class="text-gray-400">Nous révolutionnons l'agriculture africaine grâce à des solutions technologiques innovantes et accessibles.</p>
+      </div>
+      
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Liens Rapides</h3>
+        <ul class="space-y-2">
+          <li><a href="#home" class="text-gray-400 hover:text-white">Accueil</a></li>
+          <li><a href="#about" class="text-gray-400 hover:text-white">À propos</a></li>
+          <li><a href="#solution" class="text-gray-400 hover:text-white">Notre Solution</a></li>
+          <li><a href="#team" class="text-gray-400 hover:text-white">Notre Équipe</a></li>
+          <li><a href="#faq" class="text-gray-400 hover:text-white">FAQ</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Contactez-nous</h3>
+        <ul class="space-y-2">
+          <li class="flex items-center">
+            <i class="fas fa-map-marker-alt mr-2 text-gray-400"></i>
+            <span class="text-gray-400">Abidjan, Côte d'Ivoire</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-phone mr-2 text-gray-400"></i>
+            <span class="text-gray-400">+225 07 67 58 17 40</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-envelope mr-2 text-gray-400"></i>
+            <span class="text-gray-400">contact@agriassist.com</span>
+          </li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Suivez-nous</h3>
+        <div class="flex space-x-4">
+          <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <h3 class="text-lg font-semibold mt-6 mb-2">Newsletter</h3>
+        <div class="flex">
+          <input type="email" placeholder="Votre email" class="px-4 py-2 rounded-l text-gray-800 w-full">
+          <button class="bg-primary px-4 py-2 rounded-r"><i class="fas fa-paper-plane"></i></button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+      <p>&copy; 2025 AgriAssist. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // FAQ Toggle
+  document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+      const answer = question.nextElementSibling;
+      const icon = question.querySelector('i');
+      
+      answer.classList.toggle('active');
+      icon.classList.toggle('fa-chevron-down');
+      icon.classList.toggle('fa-chevron-up');
+    });
+  });
+  
+  // Mobile Menu Toggle (would need implementation)
+  // document.querySelector('.md\\:hidden').addEventListener('click', () => {
+  //     // Implement mobile menu toggle
+  // });
+  
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=D2-teko/tekotekwebsite" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
